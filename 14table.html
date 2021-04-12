@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Table</title>
+	<style>
+		table, th, td{
+			border: 1px solid grey;
+			border-collapse: collapse;
+		}
+		th, td{
+			padding: 15px;
+			text-align: center;
+		}
+		table{
+			//border-spacing: 5px;
+			margin: 20px 20px;
+		}
+
+		#t01 tr:nth-child(even){
+			background-color: #eee;
+		}
+		#t01 tr:nth-child(odd){
+			background-color: #fff;
+		}
+		#t01 th{
+			color: white;
+			background-color: black;
+		}
+	</style>
+</head>
+
+<body>
+	<table>
+		<caption>Information</caption>
+		<tr>
+			<th>Firstname</th>
+			<th>Lastname</th>
+			<th>Age</th>
+		</tr>
+		<tr>
+			<td>Jill</td>
+			<td>Smith</td>
+			<td>50</td>
+		</tr>
+		<tr>
+			<td>Eve</td>
+			<td>Jackson</td>
+			<td>94</td>
+		</tr>
+	</table>
+
+	<table>
+		<tr>
+			<th>Name</th>
+			<th colspan="2">Telephone</th>
+		</tr>
+		<tr>
+			<td>Bill</td>
+			<td>555666</td>
+			<td>666777</td>
+		</tr>
+	</table>
+
+	<table>
+		<tr>
+			<th>Name</th>
+			<td>Bill</td>
+		</tr>
+		<tr>
+			<th rowspan="2">Telephone</th>
+			<td>555666</td>
+		</tr>
+		<tr>
+			<td>777888</td>
+		</tr>
+	</table>
+
+	<table id="t01">
+		<tr>
+			<th>Firstname</th>
+			<th>Lastname</th>
+			<th>Age</th>
+		</tr>
+		<tr>
+			<td>Eve</td>
+			<td>Jackson</td>
+			<td>94</td>
+		</tr>
+		<tr>
+			<td>Jill</td>
+			<td>Smith</td>
+			<td>35</td>
+		</tr>
+		<tr>
+			<td>John</td>
+			<td>Doe</td>
+			<td>25</td>
+		</tr>
+		<tr>
+			<td>Jack</td>
+			<td>Smith</td>
+			<td>26</td>
+		</tr>
+	</table>
+</body>
+</html>
