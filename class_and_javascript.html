@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Class and Javascript</title>
+    </head>
+
+    <body>
+        <h1>Use class in Javascript</h1>
+        <p>Click the button to hide all elements with class name "city"</p>
+
+        <button onclick="hide()">Hide elements</button>
+        <button onclick="show()">Show elements</button>
+
+        <h2 class="city">London</h2>
+        <p>England</p>
+
+        <h2 class="city">Paris</h2>
+        <p>France</p>
+
+        <h2 class="city">Tokyo</h2>
+        <p>Japan</p>
+
+        <script>
+            function hide(){
+                var x = document.getElementsByClassName("city");
+                for(var i=0; i<x.length; i++){
+                    x[i].style.display = "none";
+                }
+            }
+
+            function show(){
+                var x = document.getElementsByClassName("city");
+                for(var i=0; i<x.length; i++){
+                    x[i].style.display = "block";
+                }
+            }
+        </script>
+    </body>
+</html>

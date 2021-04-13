@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Responsive Image</title>
+        <meta charset="utf-8">
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            
+            .left, .right{
+                background-color: #2196f3;
+                padding: 20px;
+                float: left;
+                width: 20%;
+            }
+
+            .main{
+                background-color: #f1f1f1;
+                padding: 20px;
+                float: left;
+                width: 60%;
+            }
+
+            @media screen and (max-width: 800px){
+                .left, .main, .right{
+                    width: 100%;
+                }
+            }
+
+        </style>
+    </head>
+    
+    <body>
+        <img src="https://www.w3schools.com/html/img_girl.jpg" alt="flowers" style="width: 100%; height: auto;">    
+        
+        <picture>
+            <source srcset="https://www.w3schools.com/html/img_smallflower.jpg" media="(max-width: 600px)">
+            <source srcset="https://www.w3schools.com/html/img_flowers.jpg" media="(max-width: 1500px)">
+            <source srcset="https://www.w3schools.com/html/flowers.jpg">
+            <img src="https://www.w3schools.com/html/img_flowers.jpg" alt="Flowers">
+        </picture>
+
+        <h1 style="font-size: 10vw;">Scalable heading</h1>
+
+        <div class="container">
+            <div class="left">Left</div>
+            <div class="main">Main</div>
+            <div class="right">Right</div>
+        </div>
+
+
+    </body>
+</html>

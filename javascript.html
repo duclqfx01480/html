@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML and Javascript</title>
+    </head>
+
+    <body>
+        <div>
+            <button onclick="displayDateAndTime()">Display Date and Time</button>
+            <br>
+            <span id="displayDateAndTime"></span>
+            <br>
+
+            <button id="changeStyleButton" onclick="changeStyle()">Change Style</button>
+        </div>
+
+        <script>
+            document.getElementById("changeStyleButton").style.display = "none";
+
+            function displayDateAndTime(){
+                document.getElementById("displayDateAndTime").innerHTML = Date();
+                changeStyleButton.style.display = "block";
+            }
+
+            function changeStyle(){
+                var x = document.getElementById("displayDateAndTime");
+                var changeStyleButton = document.getElementById("changeStyleButton");
+                x.style.fontSize = "25px";
+                x.style.color = "red";
+                x.style.backgroundColor = "yellow";
+            }
+        </script>
+    </body>
+</html>

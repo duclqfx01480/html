@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Semantic elements</title>
+        <meta charset="utf-8">
+        <style>
+            .all-browsers{
+                margin: 0;
+                padding: 5px;
+                background-color: lightgray;
+            }
+
+            .all-browsers>h1, .browser{
+                margin: 10px;
+                padding: 5px;
+            }
+
+            .browser{
+                background-color: white;
+            }
+
+            .browser>h2, p{
+                margin: 4px;
+                font-size: 90%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <header>
+                <h1>Header</h1>
+            </header>
+
+            <nav>
+                <a href="#">HTML</a>
+                <a href="#">CSS</a>
+                <a href="#">Javascript</a>
+                <a href="#">jQuery</a>
+            </nav>
+
+            <h2>Demo of aside</h2>
+            <p>A topic goes here about a subject</p>
+            <aside>
+                <h3>Subject</h3>
+                <p>Details about the subject</p>
+            </aside>
+
+            <div class="section">
+                <section>
+                    <h1>Section 1</h1>
+                    <p>Description of section 1</p>
+                </section>
+
+                <section>
+                    <h1>Section 2</h1>
+                    <p>Description of section 2</p>
+                </section>
+            </div>
+
+            <div class="article">
+                <article>
+                    <h1>Article 1</h1>
+                    <p>Description of article 1</p>
+                </article>
+
+                <article>
+                    <h1>Article 2</h1>
+                    <p>Description of article 2</p>
+                </article>
+
+                <article>
+                    <h1>Article 3</h1>
+                    <p>Description of article 3</p>
+                </article>
+            </div>
+
+            <div class="demo-of-article">
+                <h1>Demo of articles</h1>
+                <article class="all-browsers">
+                    <h1>Most popular browsers</h1>
+                    <article class="browser">
+                        <h2>Google Chrome</h2>
+                        <p>Google Chrome is a web browser developed by Google, released in 2008. Chrome is the world's most popular web browser today!</p>
+                    </article>
+
+                    <article class="browser">
+                        <h2>Mozilla Firefox</h2>
+                        <p>Mozilla Firefox is an open-source web browser developed by Mozilla. Firefox has been the second most popular web browser since January, 2018.</p>
+                    </article>
+
+                    <article class="browser">
+                        <h2>Microsoft Edge</h2>
+                        <p>Microsoft Edge is a web browser developed by Microsoft, released in 2015. Microsoft Edge replaced Internet Explorer.</p>
+                    </article>
+
+                </article>
+
+            </div>
+
+            <figure>
+                <img src="https://www.w3schools.com/html/pic_trulli.jpg" alt="Trulli" style="width: 100%;">
+                <figcaption>Fig.1 - Trulli. Puglia, Italy.</figcaption>
+            </figure>
+
+            <summary>
+                Summary idea
+                <details>
+                    This is the details of this topic
+                </details>
+            </summary>
+
+            <footer>
+                <h1>Footer</h1>
+                <p>Author:</p>
+                <p><a href="#">contact@host.com</a></p>
+            </footer>
+
+        </div> <!-- end of container -->
+        
+                
+    </body>
+
+</html>

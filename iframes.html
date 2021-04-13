@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>IFrames</title>
+        <style>
+            .container{
+                width: 100%;
+                margin: 0 auto;
+                overflow: auto;
+            }
+
+            .aside{
+                float: left;
+                width: 10%;
+            }
+
+            .content{
+                float: left;
+                width: 90%;
+                text-align: center;
+                margin: 0 auto;
+            }
+
+            iframe{
+                width: 100%;
+                height: 1000px;
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="aside">
+                <a href="http://codelearn.io" target="iframe_display">Codelearn.io</a>
+
+            </div>
+
+            <div class="content">
+                <iframe src="http://google.com" name="iframe_display" title="Display Area"></iframe>
+
+            </div>
+
+        </div>
+    </body>
+</html>

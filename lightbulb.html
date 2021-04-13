@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Light bulb</title>
+    </head>
+
+    <body>
+        <img id="displayArea" src="https://www.w3schools.com/html/pic_bulboff.gif" alt="lightbulb" width="100" height="180">
+        <p>
+            <button onclick="light(1)">Turn on</button>
+            <button onclick="light(0)">Turn off</button>
+        </p>
+
+        <script>
+            function light(sw){
+                var pic;
+                if(sw == 0){
+                    pic = "https://www.w3schools.com/html/pic_bulboff.gif";
+                }
+                else{
+                    pic = "https://www.w3schools.com/html/pic_bulbon.gif";
+                }
+                document.getElementById("displayArea").src = pic;
+            }
+        </script>
+        <noscript>Sorry, your browser does not support Javascript</noscript>
+    </body>
+</html>
