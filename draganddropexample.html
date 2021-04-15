@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Drag and Drop API</title>
+
+        <style>
+            #droparea{
+                border: 1px solid #aaa;
+                background-color: #e1e1e1;
+                width: 350px;
+                height: 71px;
+                padding: 10px;
+            }
+
+        </style>
+
+        <script>
+            function drag(ev){
+                ev.dataTransfer.setData("text", ev.target.id);
+            }
+
+            function allowDrop(ev){
+                ev.preventDefault();
+            }
+
+            function drop(ev){
+                ev.preventDefault();
+                var data = ev.dataTransfer.getData("text");
+                ev.target.appendChild(document.getElementById(data));
+            }
+
+        </script>
+    </head>
+
+    <body>
+        <h2>Drag and drop the image into the rectangle</h2>
+        <div class="container">
+            <div id="droparea" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+        </div>
+
+        <br>
+        <img id="logo" src="https://www.w3schools.com/html/img_logo.gif" alt="logo" width="315" height="70" draggable="true" ondragstart="drag(event)">
+        
+
+    </body>
+</html>

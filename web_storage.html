@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Web Storage</title>
+
+        <style>
+            .result{
+                color:seagreen;
+                font-weight: bold;
+                font-size: 36px;
+            }
+        </style>
+
+        <script>
+            function checkWebStorageSupport(){
+                if(typeof(Storage)!="undefined"){
+                    alert("Web storage is working");
+                }
+                else{
+                    alert("Sorry! Your web browser does not support Web Storage");
+                }
+            }
+
+            function saveData(key, value){
+                localStorage.setItem(key, value);
+                alert("Data has been saved!");
+            }
+
+            function getSavedData(key){
+                document.getElementById("result1").innerHTML = localStorage.getItem(key);
+            }
+            
+            function removeData(key){
+                localStorage.removeItem(key);
+                getSavedData(key);
+                alert("Data has been removed!");
+            }
+
+            function localStorageClickCount(){
+                if(localStorage.clickcount){
+                    localStorage.clickcount = Number(localStorage.clickcount) + 1;
+                }
+                else{
+                    localStorage.clickcount = 1;
+                }
+
+                document.getElementById("result1").innerHTML = "Clicked the button " + localStorage.clickcount + " time(s)."
+            }
+
+            function sessionStorageClickCount(){
+                if(sessionStorage.clickcount){
+                    sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+                }
+                else{
+                    sessionStorage.clickcount = 1;
+                }
+
+                document.getElementById("result2").innerHTML = "Clicked the button " + sessionStorage.clickcount + " time(s)."
+            }
+
+        </script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="localStorage">
+                <h2>Local Storage</h2>
+                <button onclick="checkWebStorageSupport()">Check Web Storage Support</button>
+                <button onclick="saveData('lastname', 'Smith')">Save data</button>
+                <button onclick="getSavedData('lastname')">Get data</button>
+                <button onclick="removeData('lastname')">Remove data</button>
+                <button onclick="localStorageClickCount()">Local Storage Click count</button>                
+            </div>
+            <p id="result1" class="result"></p>
+        
+            <br>
+
+            <div class="sessionStorage">
+                <h2>Session Storage</h2>
+                <button onclick="sessionStorageClickCount()">Session Storage click count</button>
+
+            </div>
+
+            <p id="result2" class="result"></p>
+
+        </div>
+    </body>
+</html>

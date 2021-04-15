@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML Graphics- Canvas</title>
+        <style>
+            #canvas{
+                border: 1px solid #aaa;
+            }
+        </style>
+
+        
+    </head>
+
+    <body>
+        <div class="container">
+
+            <canvas id="canvas" width="800" height="600"></canvas>
+            
+            <br>
+
+            <button onclick="drawALine()">Draw a line</button>
+            <button onclick="drawACircle()">Draw a circle</button>
+            <button onclick="drawAFillText()">Draw filled text</button>
+            <button onclick="drawAStrokeText()">Draw stroke text</button>
+            <button onclick="drawLinearGradient()">Draw linear gradient</button>
+            <button onclick="drawCircularGradient()">Draw circular gradient</button>
+            <button onclick="drawImage()">Draw Image</button>
+
+            <br>
+            <div>
+                <h2>Image to draw</h2>
+                <img id="image" src="https://www.w3schools.com/html/img_the_scream.jpg" alt="image">
+            </div>
+
+        </div>
+
+        <script>
+            function drawALine(){
+                var c = document.getElementById("canvas");
+                var ctx = c.getContext("2d");
+                ctx.moveTo(0,0);
+                ctx.lineTo(800, 600);
+                ctx.stroke();
+            }
+
+            function drawACircle(){
+                var c = document.getElementById("canvas");
+                var ctx = c.getContext("2d");
+                ctx.beginPath();
+                ctx.arc(400, 300, 100, 0, 2*Math.PI);
+                ctx.stroke();
+            }
+
+            function drawAFillText(){
+                var c = document.getElementById("canvas");
+                var ctx = c.getContext("2d");
+                ctx.font = "36px Arial";
+                ctx.fillText("Graphics Canvas", 260, 310);
+            }
+
+            function drawAStrokeText(){
+                var c = document.getElementById("canvas");
+                var ctx = c.getContext("2d");
+                ctx.font = "42px Arial";
+                ctx.strokeText("Canvas", 330, 350);
+            }
+
+            function drawLinearGradient(){
+                var c = document.getElementById("canvas");
+                var ctx = c.getContext("2d");
+
+                // create gradient
+                var grd = ctx.createLinearGradient(0,0,200,0);
+                grd.addColorStop(0, "red");
+                grd.addColorStop(1, "white");
+
+                // fill with gradient
+                ctx.fillStyle = grd;
+                ctx.fillRect(10,10,150,80);
+            }
+
+            function drawCircularGradient(){
+                var c = document.getElementById("canvas");
+                var ctx = c.getContext("2d");
+
+                // create gradient
+                var grd = ctx.createRadialGradient(75,50,5,90,60,100);
+                grd.addColorStop(0, "red");
+                grd.addColorStop(1, "white");
+
+                // fill with gradient
+                ctx.fillStyle = grd;
+                ctx.fillRect(10, 100, 150, 180);
+            }
+
+            function drawImage(){
+                var c = document.getElementById("canvas");
+                var ctx = c.getContext("2d");
+
+                var img = document.getElementById("image");
+                ctx.drawImage(img, 200, 200);
+            }
+
+        </script>
+        
+
+    </body>
+</html>

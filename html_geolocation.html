@@ -2,16 +2,38 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>HTML Geolocation</title>
+        <title>HTML Geolocation API</title>
     </head>
 
     <body>
 
         <div class="container">
+            <p>Click the button to get your coordinates</p>
+            <button onclick="getLocation()">Get location</button>
+
+            <p id="locationDisplay"></p>
             
 
 
         </div>
+
+        <script>
+            var x = document.getElementById("locationDisplay");
+
+            function getLocation(){
+                if(navigator.geolocation){
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                }
+                else{
+                    x.innerHTML = "Your browser does not support geolocation";
+                }
+            }
+
+            function showPosition(position){
+                x.innerHTML = "Lattitude " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+            }
+
+        </script>
         
 
     </body>

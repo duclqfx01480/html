@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Drag and Drop API</title>
+
+        <style>
+            .droparea{
+                background: #f1f1f1;
+                border: 1px solid #aaa;
+                width: 350px;
+                height: 71px;
+                padding: 10px;
+                margin: 20px 0;
+                
+            }
+
+        </style>
+
+        <script>
+            function drag(ev){
+                ev.dataTransfer.setData("text", ev.target.id);
+            }
+
+            function allowDrop(ev){
+                ev.preventDefault();
+            }
+
+            function drop(ev){
+                ev.preventDefault();
+                var data = ev.dataTransfer.getData("text");
+                ev.target.appendChild(document.getElementById(data));
+            }
+
+        </script>
+    </head>
+
+    <body>
+        <div class="container">
+            <h2>Drag and Drop image back and forth</h2>
+            <div class="droparea" ondragover="allowDrop(event)" ondrop="drop(event)">
+                <img id="logo" src="https://www.w3schools.com/html/img_logo.gif" alt="logo" width="319" height="70" draggable="true" ondragstart="drag(event)">
+            </div>
+            
+            <div class="droparea" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+
+        </div>
+    </body>
+</html>
